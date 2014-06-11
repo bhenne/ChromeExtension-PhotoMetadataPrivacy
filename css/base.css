@@ -1,0 +1,87 @@
+html {
+    margin:0;
+    padding:0;
+    background-color:rgba(0,0,0,0.8);
+}
+body {
+
+    margin:0;
+    padding:0;
+    font-family:Verdana, Arial, Helvetica, sans-serif !important;
+    font-size:14px;
+}
+
+*:focus {
+    outline: none;
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    padding:0px 0px 0px 0px;
+    margin:10px 0px 30px 0px;
+}
+
+h2 {
+    font-size:18px;
+    font-weight:normal;
+    padding:0;
+    margin:10px 0px 5px 0px;
+}
+
+
+
+label {
+    display:block;
+}
+
+textarea, input[type=text], input[type=password] {    
+    border:1px solid #CCC;
+    padding:3px 8px 5px 8px;
+    border-radius: 6px;
+}
+
+#container {
+    width:800px;
+    margin: 0px auto;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color:#FFF;
+    padding:20px;
+    position:relative;
+}
+
+button {
+    color:#FFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    padding:10px 14px 12px 14px;
+    border:1px solid rgba(0, 0, 0, 0.35);
+    background: linear-gradient(to bottom, rgba(76,76,76,1) 0%,rgba(89,89,89,1) 12%,rgba(102,102,102,1) 25%,rgba(71,71,71,1) 39%,rgba(44,44,44,1) 50%,rgba(0,0,0,1) 51%,rgba(17,17,17,1) 60%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(19,19,19,1) 100%);
+}
+
+button:hover {
+    box-shadow: inset 0px 5px 10px 5px rgba(0,0,0,0.4), inset 0px -5px 10px -3px rgba(255,255,255,0.4);
+    cursor: pointer;
+}
+
+.status {
+    color:#246625;
+    background-color:#CEE0C7;
+    border-radius:10px;
+    border:1px solid #D6E9C6;
+    padding:40px 0px 40px 0px;
+    display:none;
+    margin:0px 0px 0px 250px;
+    position:fixed;
+    top:10px;
+    width:298px;
+    pointer-events: none;
+    text-align:center;
+}
+
+
+
+.errorForm input[type=text], .errorForm input[type=password] {
+    border: 1px solid #CC0000;
+}

@@ -1,0 +1,3 @@
+bin/photo_metadata_privacy_x86_32.nexe
+bin/photo_metadata_privacy_x86_64.nexe
+newlib/*

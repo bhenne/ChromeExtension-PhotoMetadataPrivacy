@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Photo Metadata Privacy Einstellungen</title>
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/helper.js"></script>
+        <script src="js/defaultOptions.js"></script>
+        <script src="js/popup.js"></script>
+        <script src="js/localize_popup.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/popup.css" />
+    </head>
+    <body>
+        <div id="container">        
+            <h1 id="opt_qheadline">Photo Metadata Privacy</h1>   
+
+            </p>
+            <h2 id="opt_hlScanImages">Bilder scannen</h2>
+            <p>
+            <label><input type="checkbox" id="doScan" /><span id="opt_doScan">Sollen Bilder auf Internetseiten nach Metadaten durchsucht werden? <small><em>Achtung:
+                            Deaktivieren Sie diese Option, wenn es zu Darstellungsproblemen auf der besuchten Internetseite kommt.</em></small></span><br /></label>
+            </p>
+
+            <h2 id="opt_hlUpload">Bilder hochladen</h2>
+            <p>
+            <label><input type="checkbox" id="respectSupportInputField" /><span id="opt_respectSupportInputField">Sollen nur Formulare überwacht werden, die es explizit erlauben? <small><em>Achtung: Wenn diese Regel deaktiviert ist, 
+                            kann es zu Komplikationen mit Formularen kommen, die Photo Metadata Privacy nicht unterstützen!</em></small><br /></span></label>
+            </p> 
+
+            <div class="status"></div>      
+
+        </div>
+    </body>
+</html>

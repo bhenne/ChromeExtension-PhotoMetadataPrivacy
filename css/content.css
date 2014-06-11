@@ -1,0 +1,579 @@
+#photoMetadataPrivacyOverlay {
+    position:fixed !important;
+    height:100% !important;
+    width:100% !important;
+    z-index: 2147483499 !important;
+    background-color: rgba( 0,0,0,0.75 ) !important;
+    top:0px !important;
+    left:0px !important;
+}
+
+#photoMetadataPrivacyContainer #photoMetadataPrivacyOverlaySubmit, #photoMetadataPrivacyContainer #photoMetadataPrivacyOverlaySubmitMDS {
+    padding:10px 0px 0px 10px !important;
+    display:inline-block;
+}
+
+#photoMetadataPrivacyContainer #photoMetadataPrivacyOverlaySubmit button, #photoMetadataPrivacyContainer #photoMetadataPrivacyOverlaySubmitMDS button {
+    margin:0px !important;
+    margin-top:10px !important;
+    font-size:16px !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataToggle, #photoMetadataPrivacyContainer #photoMetadataPrivacySubmit, #photoMetadataPrivacyContainer #photoMetadataPrivacySubmitMDS {
+    text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25) !important;
+    border-radius: 6px !important;
+    padding:8px 4px 8px 4px !important;
+    margin:0px 0px 0px 0px !important;
+    display:inline-block !important;
+    border:1px solid rgba(0, 0, 0, 0.35) !important;
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%) !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataToggle:hover, #photoMetadataPrivacyContainer #photoMetadataPrivacySubmit:hover, #photoMetadataPrivacyContainer #photoMetadataPrivacySubmitMDS:hover {
+    box-shadow: none;       
+    background: linear-gradient(to bottom, rgba(220,220,220,1) 0%,rgba(240,240,240,1) 50%,rgba(244,244,234,1) 51%,rgba(220,220,220,1) 100%) !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataToggle:disabled, #photoMetadataPrivacyContainer #photoMetadataPrivacySubmit:disabled, #photoMetadataPrivacyContainer #photoMetadataPrivacySubmitMDS:disabled {
+    border:1px solid rgba(0, 0, 0, 0.1) !important;
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(250,250,250,1) 50%,rgba(245,245,245,1) 51%,rgba(255,255,255,1) 100%) !important;
+    cursor: default;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataToggle:disabled *, #photoMetadataPrivacyContainer #photoMetadataPrivacySubmit:disabled *, #photoMetadataPrivacyContainer #photoMetadataPrivacySubmitMDS:disabled * {
+    color: #bbb !important;
+}
+
+
+
+#photoMetadataPrivacyContainer .ui-button-text {
+    padding:0 !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyLoading {
+    text-align:center !important;
+    padding:150px 0px 150px 0px !important;
+}
+
+#photoMetadataPrivacyContainer, #photoMetadataPrivacyContainer * {
+    color:#000 !important;
+    background: none !important;
+}
+
+#photoMetadataPrivacyContainer {
+    position:absolute !important;
+    right:0px !important;	
+    min-height: 100% !important;
+    top:0px !important;
+    background:#FFF !important;    
+    z-index: 2147483500 !important;
+    font-family:Verdana, Arial, Helvetica, sans-serif !important;	
+    box-shadow: 0px 0px 80px 10px rgba(0, 0, 0, 1) !important;
+    overflow:hidden !important;
+    border-bottom-left-radius: 15px !important;
+}
+
+#photoMetadataPrivacyContainer #photoMetadataPrivacyClose {
+    position:absolute !important;
+    top:1px !important;
+    right:1px !important;
+    z-index: 2147483638 !important;
+    cursor:pointer !important;
+    background-color:#FFF !important;
+    border-radius: 4px !important;
+    color:#000000 !important;
+    padding: 0px 5px 0px 5px !important;
+    font-weight:bold !important;
+}
+
+#photoMetadataPrivacyThumbsUnderlay {
+    position:absolute !important;
+    width:100% !important; 
+    z-index: 2147483509 !important;    
+    background-color: rgba( 0,0,0,0.4 ) !important;
+    box-shadow: inset 0px -10px 20px 0px rgba(0, 0, 0, 0.8) !important;
+}
+
+#photoMetadataPrivacyContainer #photoMetadataPrivacyThumbsLoading {
+    width:100% !important;
+    background-image:url(chrome-extension://__MSG_@@extension_id__/images/loading.gif) !important;
+    background-repeat:no-repeat !important;
+    background-position: center center !important;
+    position:absolute !important;   
+    z-index: 2147483600 !important;
+}
+
+#photoMetadataPrivacyContainer #photoMetadataPrivacyThumbs {
+    margin-top:0px !important;	
+    margin-right:0px !important;	
+    margin-bottom:0px !important;	
+    z-index: 2147483510 !important;
+    position:relative !important;    
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyThumb {
+    margin: 0px 0px 0px 0px !important;
+    padding: 0px 0px 0px 0px !important;
+    border:0 !important;
+    float:left !important;
+    cursor:pointer !important;
+    z-index: 2147483515 !important;
+    position:relative !important;   
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyThumb .photoMetadataPrivacyBB {
+    border:2px solid #CC0000 !important;
+    position:absolute !important;    
+    z-index: 2147483616 !important;
+    background:none !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyThumb img {
+    margin: 0px 0px 0px 0px !important;
+    padding: 0px 0px 0px 0px !important;
+    border:0 !important;
+    display:block !important;
+    z-index: 2147483516 !important;
+    position:relative !important;
+    pointer-events:none !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyThumb span {
+    position:absolute !important;
+    left:0px !important;
+    bottom:0px !important;	
+    background-color: rgba( 0,0,0,0.5 ) !important;
+    color:#FFF !important;
+    font-size:12px !important;
+    padding:4px 0px 4px 10px !important;
+    z-index: 2147483517 !important;
+    pointer-events:none !important;
+    font-weight:normal !important;
+    word-break: break-all;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyThumb .photoMetadataPrivacyThumbInactive {
+    height:100% !important;
+    background-color: rgba( 0,0,0,0.6 ) !important;
+    position:absolute !important;
+    z-index: 2147483518 !important;
+    pointer-events:none !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyLeftButton, .photoMetadataPrivacyRightButton {
+    cursor:pointer !important;
+    height:56px !important;
+    position:absolute !important;
+    width:50px !important;
+    z-index: 2147483618 !important;
+    top:64px !important;
+    opacity:0.7 !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyLeftButton:hover, #photoMetadataPrivacyContainer .photoMetadataPrivacyRightButton:hover {
+    opacity:1 !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyLeftButton {
+    background-image:url(chrome-extension://__MSG_@@extension_id__/images/left-arrow.png) !important;
+    left: 1px !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyRightButton {
+    background-image:url(chrome-extension://__MSG_@@extension_id__/images/right-arrow.png) !important;
+    right: 1px !important;
+}
+
+#photoMetadataPrivacyContainer #photoMetadataPrivacyContents {	
+    z-index: 2147483550 !important;
+    position:relative !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyContent {
+    padding:15px 10px 0px 10px !important;
+    font-size:1em !important;	
+    font-size:14px !important;	
+    z-index: 2147483551 !important;
+    position:relative !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyContent  h1{
+    font-size:14px !important;
+    color:#444 !important;
+    background:none !important;
+    border:0 !important;
+    padding:0px 0px 10px 0px !important;
+    margin:0 !important;
+    height:auto !important;
+    min-height: 0px !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyContent  h1 span {
+    font-weight:normal !important;
+}
+
+#photoMetadataPrivacyContainer  .photoMetadataPrivacyContent  h3{
+    font-size:12px !important;
+    font-weight:bold !important; 
+    color:#000 !important;
+    margin:0px 0px 5px 0px !important;
+    padding: 0px 0px 0px 0px !important;
+    white-space: nowrap !important;
+    line-height:18px !important;
+    border: 0 !important;
+    background:none !important;
+}
+
+.photoMetadataPrivacyEditSave , .photoMetadataPrivacyMetaDataTools a{
+    cursor:pointer !important;
+}
+
+#photoMetadataPrivacyContainer  .photoMetadataPrivacyContent  h3 a{
+
+}
+
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataTools {
+    display:none !important;
+    position:absolute !important;
+    right:0px !important;
+    top:0px !important;
+}
+
+#photoMetadataPrivacyContainer  .photoMetadataPrivacyDataExifThumb {
+    padding:10px 0px 10px 0px;
+    text-align: center;
+    position: relative;
+}
+
+#photoMetadataPrivacyContainer  .photoMetadataPrivacyDataExifThumb:hover .photoMetadataPrivacyMetaDataTools {
+    display:inline !important;
+    top:10px !important;
+    right:10px !important;
+}
+
+#photoMetadataPrivacyContainer  .photoMetadataPrivacyDataExifThumb img {
+    max-width: 100%;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataEntry h3 {
+    position:relative !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataEntry:hover > h3  > .photoMetadataPrivacyMetaDataTools {
+    display:inline !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaData {
+    width:100% !important;
+    table-layout: fixed !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaData td {
+    vertical-align: top !important;
+    white-space: nowrap !important;	
+    width:33.3% !important;
+    overflow: auto !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaData td input[type=text]{
+    width:200px !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaData th {
+    white-space: nowrap !important;	
+    padding:0px 10px 10px 10px !important;
+    font-size:12px !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataEntry {
+    position:relative !important;
+    padding:0px 0px 10px 0px !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataEntry h3 .photoMetadataPrivacyMetaDataTools {
+     white-space: nowrap !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataEntry h3, .photoMetadataPrivacyMetaDataEntry .photoMetadataPrivacyEditShow {
+    overflow: visible !important;
+    white-space: pre-line !important; /* CSS 3 (and 2.1 as well, actually) */
+    width:100% !important;
+    word-wrap: break-word !important;
+    word-break: break-all !important;
+    font-weight:normal !important;
+}
+
+.photoMetadataPrivacyMetaDataEntry .photoMetadataPrivacyEditShow {
+    overflow:hidden !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup .photoMetadataPrivacyMetaDataEntry  {
+    /*display:inline-block !important;*/
+    float:left !important;
+    padding:5px 10px 5px 10px !important;
+    border:1px dashed #ccc !important;
+    margin:0px 10px 10px 0px !important;
+    background-color:#fbfbfb !important;
+    border-radius:5px !important;
+}
+
+#photoMetadataPrivacyContainer #photoMetadataPrivacyContents .photoMetadataPrivacyMetaDataEntryImportant,
+#photoMetadataPrivacyContainer #photoMetadataPrivacyContents .photoMetadataPrivacyMetaDataEntryImportant .photoMetadataPrivacyMetaDataEntry {
+    background-color: rgba(240,100,100,0.2) !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup .photoMetadataPrivacyMetaDataEntry .photoMetadataPrivacyMetaDataEntry  {
+    background-color: rgba(230,230,230,0.1) !important;    
+    border:1px dashed rgba(60,60,60,0.3) !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup {
+    border: 1px solid #ddd !important;
+    margin-top: 15px !important;
+    padding:25px 20px 10px 20px !important;
+    position:relative !important;
+    border-radius:10px !important;
+}
+
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup:before,
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup:after {
+    display: table !important;
+    content: "" !important;
+    line-height: 0 !important;
+}
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup:after {
+    clear: both !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup h1 {
+    font-size: 12px !important;
+    position:absolute !important;
+    border: 1px solid #ddd !important;
+    background: #fff !important;
+    padding: 5px 10px 5px 10px !important;
+    top: -20px !important;
+    left:40px !important;
+    border-radius:10px !important;
+    margin:8px 0px 0px 0px !important;	
+    positon:relative !important;
+    background-color: rgba(255,255,255,1) !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup h1 a {
+    padding:0px 0px 0px 20px !important;
+    display:inline-block !important;
+    margin:0px 0px 0px 0px !important;
+    position:relative !important;
+    cursor:pointer !important;
+    color:#000 !important;    
+    border: 0 !important;
+    background:none !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup h1 a:hover {
+    text-decoration:underline !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup h1 a span {
+    -webkit-transform: rotate(90deg) !important; 
+    display:inline-block !important;
+    background-color:transparent !important;
+    margin:0px 0px 0px 0px !important;
+    position:absolute !important;
+    bottom:-1px !important;
+    left:10px !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup h1 > span {
+    background-position: right center !important;
+    background-repeat:no-repeat !important;
+    padding:0px 0px 0px 0px !important;
+    display:inline-block !important;
+    vertical-align:sub !important;
+    margin:0px 0px 0px 5px !important;
+    width:16px !important;
+    height:16px !important;
+    background-color: rgba(255,255,255,0) !important;    
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup-1 h1 > span, .photoMetadataPrivacyImgOverlayGroup-0 {
+    background-image: url(chrome-extension://__MSG_@@extension_id__/images/icon-16-overlay.png) !important;
+}
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup-1 h1 > span, .photoMetadataPrivacyImgOverlayGroup-1 {
+    background-image: url(chrome-extension://__MSG_@@extension_id__/images/person.png) !important;
+}
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup-2 h1 > span, .photoMetadataPrivacyImgOverlayGroup-2 {
+    background-image: url(chrome-extension://__MSG_@@extension_id__/images/location.png) !important;
+}
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup-3 h1 > span, .photoMetadataPrivacyImgOverlayGroup-3 {
+    background-image: url(chrome-extension://__MSG_@@extension_id__/images/time.png) !important;
+}
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup-4 h1 > span, .photoMetadataPrivacyImgOverlayGroup-4 {
+    background-image: url(chrome-extension://__MSG_@@extension_id__/images/data.png) !important;
+}
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup-5 h1 > span, .photoMetadataPrivacyImgOverlayGroup-5 {
+    background-image: url(chrome-extension://__MSG_@@extension_id__/images/flickr.png) !important;
+}
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDataGroup-6 h1 > span, .photoMetadataPrivacyImgOverlayGroup-6 {
+    background-image: url(chrome-extension://__MSG_@@extension_id__/images/nodata.png) !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyGEO, #photoMetadataPrivacyContainer .photoMetadataPrivacyPT {
+    display:block !important;
+    padding:0px 0px 0px 0px !important;
+    border:1px dashed #ddd !important;
+    margin:0px 0px 10px 0px !important;
+    background-color:#fdfdfd !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyGEOEntry, #photoMetadataPrivacyContainer .photoMetadataPrivacyPTEntry {
+    display:inline-block !important;
+    padding:5px 10px 5px 10px !important;
+    margin:0px 0px 0px 0px !important;
+    cursor:pointer !important;
+    font-size:12px !important;
+    background-color: #f1f1f1 !important;
+}
+
+#photoMetadataPrivacyContainer  .photoMetadataPrivacyMetaDataEntryImportant .photoMetadataPrivacyGEOEntry, #photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataEntryImportant .photoMetadataPrivacyPTEntry {
+    background-color: rgba(240,100,100,0.25) !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyGEOEntry b, #photoMetadataPrivacyContainer .photoMetadataPrivacyPTEntry b {
+    text-decoration:underline !important;
+}
+#photoMetadataPrivacyContainer .photoMetadataPrivacyGEOEntry:last-child, #photoMetadataPrivacyContainer .photoMetadataPrivacyPTEntry:last-child {
+    margin:0 !important;
+}
+#photoMetadataPrivacyContainer .photoMetadataPrivacyGEOEntries, #photoMetadataPrivacyContainer .photoMetadataPrivacyPTEntries {
+
+    background-color: #eaeaea !important;;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyGEOEntryActive, #photoMetadataPrivacyContainer .photoMetadataPrivacyPTEntryActive {
+
+    background-color: #e1e1e1 !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataEntryImportant .photoMetadataPrivacyGEOEntries, #photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataEntryImportant .photoMetadataPrivacyPTEntries {
+    background-color: rgba(240,100,100,0.2) !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataEntryImportant .photoMetadataPrivacyGEOEntryActive, #photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataEntryImportant .photoMetadataPrivacyPTEntryActive {
+    background-color: rgba(240,100,100,0.45) !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyGEOMapSpacer, #photoMetadataPrivacyContainer .photoMetadataPrivacyPTSpacer {
+    height:10px !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyPTName {
+    padding:0px 10px 10px 10px !important;
+    font-weight:normal !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyGEOMap {
+    height:200px !important;
+    width:auto !important;
+}
+
+#photoMetadataPrivacyContainer .olControlAttribution {
+    bottom:5px !important;
+    right:5px !important;
+}
+
+.photoMetadataPrivacyImgOverlay {
+    position: absolute !important;
+    display: block !important;
+    z-index: 2140000000 !important;
+    cursor: pointer !important;
+    width: 16px !important;
+    height: 16px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    border:0 !important;
+    border: 0 !important;
+    top:5px !important;
+    opacity: 0.7 !important;
+    background-position: center center !important;
+    background-repeat:no-repeat !important;
+    background-color: rgba(255,255,255,0) !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataToggle {
+    margin:10px 0px 10px 0px !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataEXIF {
+    padding:0px 10px 0px 0px !important;
+}
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataXMP {
+    border-left:1px solid #000 !important;
+    border-right:1px solid #000 !important;
+    padding:0px 10px 0px 10px !important;
+}
+#photoMetadataPrivacyContainer .photoMetadataPrivacyMetaDataIPTC {
+    padding:0px 0px 0px 10px !important;
+}
+
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyTooltipSpacer {
+    height:1px !important;
+    margin:8px 10px 7px 10px !important;
+
+    border-bottom: 1px dashed #FFF !important;
+}
+
+
+
+#photoMetadataPrivacyConfirmUploadBothServices {
+    display:none;
+}
+
+#photoMetadataPrivacyContainer2 .ui-dialog {    
+    z-index: 2147483640 !important;
+}
+
+#photoMetadataPrivacyContainer2 .ui-widget-overlay {    
+    z-index: 2147483639 !important;
+}
+
+#photoMetadataPrivacyContainer2 .ui-dialog-titlebar-close {
+    visibility: hidden;
+}
+
+#photoMetadataPrivacyContainer2 .ui-dialog-buttonset button {
+    width:100px;
+}
+
+/*tooltip*/
+html body .photoMetadataPrivacyTooltip.ui-tooltip.ui-widget.ui-corner-all.ui-widget-content .ui-tooltip-content {
+    font-weight:normal !important;
+}
+
+html body .photoMetadataPrivacyTooltip.ui-tooltip.ui-widget.ui-corner-all.ui-widget-content {
+    background:white !important;
+    white-space:normal !important;
+    z-index: 2147483519 !important;
+     background: #000 !important;
+    -webkit-box-shadow: 0 0 5px #000 !important;
+    box-shadow: 0 0 5px #000 !important;
+     color: #FFF !important;
+    font-size:12px !important;	
+    position:absolute !important;	
+    
+}
+
+#photoMetadataPrivacyContainer  .photoMetadataPrivacyDeleteAllMeta {
+    margin:0px !important;
+    padding:2px 4px 2px 4px !important;
+    background: #f1f1f1 !important;
+    color:#333 !important;
+    cursor: pointer !important;
+}
+
+#photoMetadataPrivacyContainer .photoMetadataPrivacyDeleteAllMeta:hover {
+    background: #cccccc !important;
+}

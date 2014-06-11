@@ -1,0 +1,9 @@
+= ToDos =
+
+* unify output formats of dates and times
+* improve/fix some group allocations (e.g. gps data -> date)
+* extend localization, at least en and de
+  * includes translation from technical to more understandble
+    metatag names; no value in localization defaults to
+    technical name from exiv2
+* tidy up code

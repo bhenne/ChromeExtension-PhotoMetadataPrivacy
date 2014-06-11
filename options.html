@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <title>Photo Metadata Privacy Einstellungen</title>
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+        <script src="js/helper.js"></script>
+        <script src="js/defaultOptions.js"></script>
+        <script src="js/options.js"></script>
+        <script src="js/localize_options.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/base.css" />
+        <link rel="stylesheet" type="text/css" href="css/options.css" />
+    </head>
+    <body>
+        <div id="container">
+            <h1><span id="opt_headline">Photo Metadata Privacy Einstellungen</span></h1>
+  
+            <div id="options">
+
+                <h2><span id="opt_hlScanImages">Bilder Scannen</span></h2>
+                <p>
+                <label><input type="checkbox" id="doScan" /><span id="opt_doScan">Sollen Bilder auf Internetseiten nach Metadaten durchsucht werden? <small><em>Achtung:
+                                Deaktivieren Sie diese Option, wenn es zu Darstellungsproblemen auf der besuchten Internetseite kommt.</em></small></span><br /></label>
+
+                </p>
+                <p>
+                <span id="opt_ScanRules_intro">Hier können Bedingungen definiert werden, um Bilder von diesem Scan auszuschließen</span><br />
+                <span id="opt_ScanRules_minwidth"><b>Mindestbreite</b> <small><em>Angabe in px, nur Zahl eintragen</em></small></span><br />
+                    <input type="text" id="conditionMinWidth" />px<br />
+                <span id="opt_ScanRules_minheight"><b>Mindesthöhe</b> <small><em>Angabe in px, nur Zahl eintragen</em></small></span><br />
+                    <input type="text" id="conditionMinHeight" />px<br />
+                <label><input type="checkbox" id="conditionAnd" /><span id="opt_ScanRules_AND">Mindesthöhe und -breite müssen beide zutreffen (UND-Verknüpfung)</span></label>
+                </p>
+
+                <hr /> 
+                
+                <h2><span id="opt_hlSidebarUI">Benutzeroberfläche</span></h2>
+                <p>
+                <span id="opt_SidebarUI_thbwidth"><b>Breite</b> der Sidebar <small><em>Angabe in px, nur Zahl eintragen, min. 200px</em></small></span><br />
+                    <input type="text" id="GUIWidth" />px
+                </p>
+                <p>
+                <span id="opt_SidebarUI_thbheight"><b>Höhe</b> der Vorschaubilder <small><em>Angabe in px, nur Zahl eintragen</em></small></span><br />
+                    <input type="text" id="thumbsHeight" />px
+                </p>
+                <hr /> 
+                
+                <h2><span id="opt_hlOverlayIcons">Overlay Icons</span></h2>
+                <p>
+                    <label><input type="checkbox" id="showIconGroup0" /><span id="opt_OverlayIconsQuickAccess">Zeige grundsätzlich - sofern das Bild im Scan behandelt wurde - ein Icon für <b>Photo Metadata Privacy</b> <small><em>Sinvoll für Webseiten, 
+                                die einen Rechtsklick abfangen</em></small></span><br /></label>         
+                </p>  
+                <p>            
+                    <label><input type="checkbox" id="showNoMetaIcon" /><span id="opt_OverlayIconsNone">Falls ein Bild gar  <b>keine Metadaten</b> enthält entsprechendes Icon anzeigen?</span></label>
+                </p>        
+                <p>            
+                    <label><input type="checkbox" id="showIconGroup1" /><span id="opt_OverlayIconsShow1">Zeige Overlay Icon für</span> <b><span id="group_people">Personen</span></b></label>
+                </p>
+                <p>            
+                    <label><input type="checkbox" id="showIconGroup2" /><span id="opt_OverlayIconsShow2">Zeige Overlay Icon für</span> <b><span id="group_location">Orte</span></b></label>
+                </p>
+                <p>            
+                    <label><input type="checkbox" id="showIconGroup3" /><span id="opt_OverlayIconsShow3">Zeige Overlay Icon für</span> <b><span id="group_datetime">Zeit/Datum</span></b></label>
+                </p>
+                <p>            
+                    <label><input type="checkbox" id="showIconGroup4" /><span id="opt_OverlayIconsShow4">Zeige Overlay Icon für</span> <b><span id="group_content">Inhaltliches</span></b></label>
+                </p>
+
+                <hr />   
+
+                <p>
+                    <label><input type="checkbox" id="showEmptyMeta" /><span id="opt_empty_fields">Sollen vorhandene, aber leere oder nicht darstellbare Metadaten trotzdem angezeigt werden?</span></label>
+                </p>
+
+                <hr />   
+
+                <h2><span id="opt_hlBlacklist">Blacklist</span></h2>
+                <p>
+                    <span id="opt_Blacklist_descr">Blacklist für Bilder, die beim Scan grundsätzlich ausgeschlossen werden sollen. <small><em>Wildcard ".*", die Einträge sind reguläre Ausdrücke(RegExp)</em></small></span><br />
+                    <textarea id="blacklist"></textarea>
+                </p>
+
+                <hr />   
+
+
+                <h2><span id="opt_hlUpload">Bilder hochladen</span></h2>
+                <p>
+                <label><input type="checkbox" id="respectSupportInputField" /><span id="opt_respectSupportInputField">Sollen nur Formulare überwacht werden, die es explizit erlauben? <small><em>Achtung: Wenn diese Regel deaktiviert ist,
+                                kann es zu Komplikationen mit Formularen kommen, die Photo Metadata Privacy nicht unterstützen!</em></small></span><br /></label>
+
+                </p>
+
+                <div class="status"></div>
+                <button class="save"><span id="btn_save">Speichern</span></button>
+
+                <br />
+                <hr />
+                <a href="#" id="showExtendedMetaSettings">Zeige erweiterte Metadaten-Konfiguration</a>
+                <div id="metatagssettingsContainer">
+                    <div class="loadingInline"></div> 
+                    <div class="loadingHide" style="display:none;">
+                        <h2 id="opt_editMDDB">Metatag-Datenbank bearbeiten</h2>
+                        <table id="metatagssettings" cellspacing="0">
+                            <tr>
+                                <th id="opt_editMDDB_key">Schlüssel</th>
+                                <th id="opt_editMDDB_type">Typ</th>
+                                <th id="opt_editMDDB_descr">Beschreibung</th>
+                                <th id="opt_editMDDB_group">Gruppe</th>
+                                <th id="opt_editMDDB_privat">Privat</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

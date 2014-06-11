@@ -1,0 +1,69 @@
+Besides interpreted Javascript code this Chrome extension uses 
+a native client app that includes the exiv2 C++ library. You have to
+build that and place it in bin/ before deploying the extension.
+
+
+== Build on Linux & Install everywhere --- as it worked in February 2014 ==
+
+0. Base directory
+   - mkdir ~/dev
+
+1. Obtain Native Client SDK
+   - see https://developers.google.com/native-client/dev/sdk/download
+   - cd ~/dev
+   - wget http://storage.googleapis.com/nativeclient-mirror/nacl/nacl_sdk/nacl_sdk.zip
+   - unzip nacl_sdk.zip
+   - cd nacl_sdk
+   - ./naclsdk update
+
+2. Obtain depot_tools
+   - see http://www.chromium.org/developers/how-tos/install-depot-tools
+   - cd ~/dev
+   - git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+   - export PATH=$PATH:`pwd`/depot_tools
+
+2. Obtain naclports
+   - see https://code.google.com/p/naclports/
+   - cd ~/dev
+   - mkdir naclports
+   - cd naclports
+   - gclient config --name=src  https://chromium.googlesource.com/external/naclports.git
+   - gclient sync
+
+3. Include exiv2 in naclports
+   - cd ~/dev
+   - git clone https://github.com/bhenne/naclports-exiv2.git
+   - cd naclports-exiv2
+   - cp -r ports/exiv2 ~/dev/naclports/src/ports/
+
+4. Build exiv2 and dependencies
+   - cd ~/dev/naclports/src
+   - export NACL_SDK_ROOT=~/dev/nacl_sdk/pepper_33
+   - unset NACL_GLIBC
+   - export NACL_ARCH=i686
+   - make exiv2
+   - export NACL_ARCH=x86_64
+   - make exiv2
+
+5. Build exiv2 wrapper
+   - cd ${PATH_TO}/chrome-photo-metadata-privacy-extension
+   - export NACL_SDK_ROOT=~/dev/nacl_sdk/pepper_33
+   - export NACL_ARCH=x86_32
+   - CONFIG=Release make
+   - export NACL_ARCH=x86_64
+   - CONFIG=Release make
+
+6. Install exiv2 wrapper
+   - cp newlib/Release/photo_metadata_privacy_x86_32.nexe bin/
+   - cp newlib/Release/photo_metadata_privacy_x86_64.nexe bin/
+   - rm -fr newlib/
+
+7. Install Chrome extension from filesystem
+   - open chrome://extensions/
+   - enable "Developer mode"
+   - "load unpacked extension..."
+   - select the directory containing this file
+   - press select
+
+8. Have a try.
+

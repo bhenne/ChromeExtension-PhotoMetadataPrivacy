@@ -1,0 +1,6 @@
+BabyGnuTux-Big.png
+from: http://www.gnu.org/graphics/3dbabygnutux.html
+by: Nicolas Rougier
+
+Example for Metadata Working Group Regions schema
+  and Microsoft Photo RegionInfo schema

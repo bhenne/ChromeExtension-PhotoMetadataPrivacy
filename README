@@ -1,0 +1,55 @@
+= Chrome Browser Extension: Photo Metadata Privacy =
+
+A Chrome browser extension that visualizes privacy-relevant image metadata
+to users. Based on libexiv2 and Google Native Client the extension reads
+Exif, IPTC and XMP metadata from files and visualizes the data according
+to different groups of personal data. Complex metadata as person tags 
+or location are specially visualized. Technical metadata is blinded 
+by default, but can also be visualized.
+
+As a proof of concept the extension allows for modifying metadata 
+on-the-fly while uploading a photo via a basic HTML form.
+
+The base version of this extension was implemented within the bachelor 
+thesis of Maximilian Koch at the Distributed Computing & Security Group 
+at the Leibniz Universität Hannover, Germany. The topic was outlined
+and the thesis was advised by Benjamin Henne. The base version was
+extended by Maximilian Koch advised by Benjamin Henne within a 
+master studies project.
+
+Technical details of the base version can be found in 
+ Maximilian Koch: "A browser extension to increase photo metadata
+ transparency and security on the Web", bachelor thesis (German).
+
+The extension has been published in Henne et al.: "On the Awareness, 
+ Control and Privacy of Photo Metadata", Financial Cryptography and 
+ Data Security 2014, volume 8437 of LNCS, Springer.
+
+Contact:
+ http://www.dcsec.uni-hannover.de/
+ henne@dcsec.uni-hannover.de
+
+
+Copyright (C) 2012-2014  Benjamin Henne and Maximilian Koch
+                         
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License 
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+
+External resources. 
+This Chrome extension uses following external resources:
+* base64.cc (zlib License)
+* jQuery (MIT License)
+* OpenLayers (2-clause BSD license)
+* exiv2 library (GPLv2)
+* exiv2's generated documentation (descriptions in metatags.json)

@@ -1,0 +1,133 @@
+
+
+input[type=text], input[type=password] {
+    width:50px;
+}
+
+
+#options {
+    display:none;
+}
+
+#loading {
+    text-align:center;
+    padding:200px 0px 200px 0px;
+}
+
+.loadingInline {
+    background-image:url(../images/loading.gif) !important;
+    background-repeat:no-repeat !important;
+    background-position: center center !important;
+    min-height:40px;
+    min-width:100px;
+    display:inline-block;
+}
+
+
+#blacklist {
+    width:400px;
+    height:200px;
+}
+
+#MDSAccount {
+    border-radius: 6px;
+    background-color: rgba(0,0,0,0.01);
+    border:1px solid rgba(0,0,0,0.15);
+
+    margin:1em 0px 1em 0px;
+    padding:1em 3em 1em 3em;
+}
+
+#MDSForm {
+    display:inline-block;
+    padding:0px 0px 0px 0px;
+    margin:1em 0px 0em 0px;
+    vertical-align: middle;
+}
+
+#MDSForm label {
+    display:block;
+    font-weight: bold;
+}
+
+#MDSForm input[type=text], #MDSForm input[type=password] {    
+    width:180px;
+    display:block;
+}
+
+#MDSLogin {
+    display:inline-block;
+    padding:0px 0px 0px 0px;
+    margin:1em 0px 0em 2em; 
+    vertical-align: middle;    
+}
+
+#MDSStatus {
+    display:inline-block;
+    padding:0px 0px 0px 0px;
+    margin:1em 0px 0em 2em; 
+    vertical-align: middle;
+}
+
+#MDSloggedout, #MDSlogged {
+    line-height: 86px;
+    vertical-align: middle;
+    font-weight: bold;
+    display:inline-block;
+}
+
+#MDSloggedout {
+    color:#CC0000;
+}
+#MDSlogged {
+    color:#00BB00;
+}
+
+#metatagssettingsContainer {
+    display:none;
+}
+
+#metatagssettings {
+    width:800px;
+}
+
+#metatagssettings tr:nth-child(2n) {
+    background: #EEE;
+}
+#metatagssettings tr:nth-child(2n+1) {
+    background: #fafafa;
+}
+
+
+#metatagssettings tr th {    
+    padding:4px 0px 4px 0px;
+}
+
+#metatagssettings tr th:nth-of-type(1), #metatagssettings tr td:nth-of-type(1) {
+    width:33%;
+}
+#metatagssettings tr th:nth-of-type(2), #metatagssettings tr td:nth-of-type(2) {
+    width:12%;
+    text-align: center;
+}
+#metatagssettings tr th:nth-of-type(3), #metatagssettings tr td:nth-of-type(3) {
+    width:44%;
+}
+#metatagssettings tr th:nth-of-type(4), #metatagssettings tr td:nth-of-type(4) {
+    width:9%;
+    text-align: center;
+}
+#metatagssettings tr th:nth-of-type(5), #metatagssettings tr td:nth-of-type(5) {
+    width:6%;
+    text-align: center;
+}
+
+#metatagssettings tr td {
+   word-break: break-all;
+    padding:4px 5px 4px 5px;
+}
+
+#metatagssettings tr td:nth-child(2n),
+#metatagssettings tr th:nth-child(2n) {
+    background-color: rgba(0,0,0,0.03); 
+}
