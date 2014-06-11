@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Chrome Extension: Photo Metadata Privacy - visualize privacy-relevant image metadata" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Chrome Extension: Photo Metadata Privacy</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+ 	  <img id="my_banner" src="images/icon-38.png" />
+ 	  <a id="forkme_banner" href="https://github.com/bhenne/android-location-privacy">Fork Me on GitHub</a>
+
+          <h1 id="project_title">Photo Metadata Privacy</h1>
+          <h2 id="project_tagline">A Chrome extension visualizing privacy-relevant metadata</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/bhenne/android-location-privacy/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/bhenne/android-location-privacy/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+      <h3>Photo Metadata Privacy</h3>
+
+      <p>By uploading photos, people partially relinquish the control over shared images. Critically, only few people are aware that most of their photos contain more information than the visual content itself, i.e. the image metadata. Besides the visual content, this data can amplify or even create threats to users’ privacy. In the early days of digital imaging, metadata had to be manually—and thus consciously—added to the images. However, current cameras are capable of embedding metadata like GPS coordinates, a camera owner’s name or the position of faces into photos automatically. Thus, people may not be aware of it.</p>
+
+      <p>We need to raise awareness about shared metadata.<br /> This Chrome extension does a first step towards this.</p>
+
+<ul>
+    <li>It hints users to the invisible metadata by indicator icons.</li>
+    <li>It shows users the full extent of metadata with a privacy focus. </li>
+    <li>Metadata is grouped and special information can be colored in the sidebar view.</li>
+    <li>As a proof of concept it implements a just in time modification of embedded metadata that allows people to change metadata before they loose control over it when sharing an image.</li>
+</ul>
+
+<p>The base version of this extension was implemented within the bachelor 
+thesis of Maximilian K. at the Distributed Computing &amp; Security Group 
+at the Leibniz Universität Hannover, Germany. The topic was outlined
+and the thesis was advised by Benjamin H. 
+</p>
+
+<p>The extension has been evaluated in a lab study. Study results and more about this extension can be found in the conference publication referenced below.</p>
+
+<h3>Screenshots</h3>
+<p>Metadata indicators on top of the image signal which metadata is embedded. By clicking them, the sidebar view shows details.</p>
+<img class="screenshot" src="images/sidebar-view.jpg" alt="Indicator icons and sidebar view" title="Indicator icons and sidebar view">
+<p>Proof of concept of the just in time modification on image upload.</p>
+<img class="screenshot" src="images/upload-proof-of-concept.jpg" alt="Proof of concept: upload sidebar" title="Proof of concept: upload sidebar">
+
+<h3>Publications</h3>
+<ol id="pubs">
+    <li>B. Henne, M. Koch, M. Smith: On the Awareness, Control and Privacy of Shared Photo Metadata. 18th International Conference on Financial Cryptography and Data Security, volume 8437 of LNCS, Springer, 2014. (<a href="http://fc14.ifca.ai/papers/fc14_submission_117.pdf">paper, conference version</a>)</li>
+    
+</ol>
+
+<h3>Support or Contact</h3>
+
+<p>Feel free to contact <a href="https://github.com/bhenne" class="user-mention">@bhenne</a>.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Photo Metadata Privacy maintained by <a href="https://github.com/bhenne">bhenne</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
