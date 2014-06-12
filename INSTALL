@@ -1,6 +1,11 @@
 Besides interpreted Javascript code this Chrome extension uses 
-a native client app that includes the exiv2 C++ library. You have to
-build that and place it in bin/ before deploying the extension.
+a native client app that includes the exiv2 C++ library. Since 
+the extension cannot access the library directly, the app works
+as a wrapper. To use the library, you have to build the app
+and place the executables in bin/ before deploying the extension.
+
+You may use the binary files included in this repository.
+They were build using pepper_33 (see below).
 
 
 == Build on Linux & Install everywhere --- as it worked in February 2014 ==
@@ -66,4 +71,34 @@ build that and place it in bin/ before deploying the extension.
    - press select
 
 8. Have a try.
+
+
+== Error handling ==
+Fixing some errors that occured building on OS X 10.7 in June 2014
+
+Error:
+  $ make exiv2
+  build_tools/naclports.py install exiv2
+  naclports: $NACL_SDK_ROOT does not exist: /Users/henne/dev/nacl_sdk/pepper_33
+  make: *** [exiv2] Error 1
+
+A newer version of pepper is available as you may have noticed when running:
+  $ ./naclsdk update
+  Downloading bundle pepper_35
+
+Just do a correct SDK path declaration
+  export NACL_SDK_ROOT=~/dev/nacl_sdk/pepper_35
+
+Error:
+  $ make exiv2
+  build_tools/naclports.py install exiv2
+  naclports: Invalid key 'PACKAGE_NAME' in pkg_info: /Users/henne/dev/naclports/src/ports/exiv2/pkg_info
+  make: *** [exiv2] Error 1
+
+naclports file structure and syntax sometimes changes. As you can see 
+in a pkg_info file of other packages we need to replace:
+  PACKAGE_NAME=exiv2-0.23
+by:
+  NAME=exiv2
+  VERSION=0.23
 
