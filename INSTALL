@@ -1,80 +1,88 @@
 Besides interpreted Javascript code this Chrome extension uses 
 a native client app that includes the exiv2 C++ library. Since 
-the extension cannot access the library directly, the app works
-as a wrapper. To use the library, you have to build the app
-and place the executables in bin/ before deploying the extension.
+the extension cannot access the library directly, an app works
+as a wrapper. To use the extension, you have to build the app and 
+place the executables in bin/ before deploying the extension.
+Details see below.
 
 You may use the binary files included in this repository.
-They were build using pepper_33 (see below).
+They were built using pepper_33. If you do not want to build
+newer binaries, just do step 0 and 9.
 
 
 == Build on Linux & Install everywhere --- as it worked in February 2014 ==
+verified on OS X 10.7 in June 2014
 
-0. Base directory
-   - mkdir ~/dev
+0. You already got the Chrome extension from github
+   - cd <anywhere> 
+   - git clone https://github.com/bhenne/ChromeExtension-PhotoMetadataPrivacy.git
+   - export PATH_TO_THIS_INSTALL_FILE=`pwd`/ChromeExtension-PhotoMetadataPrivacy
 
-1. Obtain Native Client SDK
-   - see https://developers.google.com/native-client/dev/sdk/download
-   - cd ~/dev
+1. Base directory
+   - export MYBASE=/tmp
+   - mkdir $MYBASE/dev
+
+2. Obtain Native Client SDK
+   (see https://developers.google.com/native-client/dev/sdk/download)
+   - cd $MYBASE/dev
    - wget http://storage.googleapis.com/nativeclient-mirror/nacl/nacl_sdk/nacl_sdk.zip
    - unzip nacl_sdk.zip
    - cd nacl_sdk
    - ./naclsdk update
 
-2. Obtain depot_tools
-   - see http://www.chromium.org/developers/how-tos/install-depot-tools
-   - cd ~/dev
+3. Obtain depot_tools
+   (see http://www.chromium.org/developers/how-tos/install-depot-tools)
+   - cd $MYBASE/dev
    - git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
    - export PATH=$PATH:`pwd`/depot_tools
 
-2. Obtain naclports
-   - see https://code.google.com/p/naclports/
-   - cd ~/dev
+4. Obtain naclports
+   (see https://code.google.com/p/naclports/)
+   - cd $MYBASE/dev
    - mkdir naclports
    - cd naclports
    - gclient config --name=src  https://chromium.googlesource.com/external/naclports.git
    - gclient sync
 
-3. Include exiv2 in naclports
-   - cd ~/dev
+5. Include exiv2 in naclports
+   - cd $MYBASE/dev
    - git clone https://github.com/bhenne/naclports-exiv2.git
    - cd naclports-exiv2
-   - cp -r ports/exiv2 ~/dev/naclports/src/ports/
+   - cp -r ports/exiv2 $MYBASE/dev/naclports/src/ports/
 
-4. Build exiv2 and dependencies
-   - cd ~/dev/naclports/src
-   - export NACL_SDK_ROOT=~/dev/nacl_sdk/pepper_33
+6. Build exiv2 and dependencies
+   - cd $MYBASE/dev/naclports/src
+   - export NACL_SDK_ROOT=$MYBASE/dev/nacl_sdk/pepper_35
    - unset NACL_GLIBC
    - export NACL_ARCH=i686
    - make exiv2
    - export NACL_ARCH=x86_64
    - make exiv2
 
-5. Build exiv2 wrapper
-   - cd ${PATH_TO}/chrome-photo-metadata-privacy-extension
-   - export NACL_SDK_ROOT=~/dev/nacl_sdk/pepper_33
+7. Build exiv2 wrapper
+   - cd $PATH_TO_THIS_INSTALL_FILE
+   - export NACL_SDK_ROOT=$MYBASE/dev/nacl_sdk/pepper_35
    - export NACL_ARCH=x86_32
    - CONFIG=Release make
    - export NACL_ARCH=x86_64
    - CONFIG=Release make
 
-6. Install exiv2 wrapper
-   - cp newlib/Release/photo_metadata_privacy_x86_32.nexe bin/
-   - cp newlib/Release/photo_metadata_privacy_x86_64.nexe bin/
+8. Install exiv2 wrapper
+   - cp newlib/Release/photo_metadata_privacy_x86_32.nexe $PATH_TO_THIS_INSTALL_FILE/bin/
+   - cp newlib/Release/photo_metadata_privacy_x86_64.nexe $PATH_TO_THIS_INSTALL_FILE/bin/
    - rm -fr newlib/
 
-7. Install Chrome extension from filesystem
+9. Install Chrome extension from filesystem
    - open chrome://extensions/
    - enable "Developer mode"
    - "load unpacked extension..."
-   - select the directory containing this file
+   - select the directory located at $PATH_TO_THIS_INSTALL_FILE
    - press select
 
-8. Have a try.
+Have a try.
 
 
 == Error handling ==
-Fixing some errors that occured building on OS X 10.7 in June 2014
 
 Error:
   $ make exiv2
@@ -87,18 +95,5 @@ A newer version of pepper is available as you may have noticed when running:
   Downloading bundle pepper_35
 
 Just do a correct SDK path declaration
-  export NACL_SDK_ROOT=~/dev/nacl_sdk/pepper_35
-
-Error:
-  $ make exiv2
-  build_tools/naclports.py install exiv2
-  naclports: Invalid key 'PACKAGE_NAME' in pkg_info: /Users/henne/dev/naclports/src/ports/exiv2/pkg_info
-  make: *** [exiv2] Error 1
-
-naclports file structure and syntax sometimes changes. As you can see 
-in a pkg_info file of other packages we need to replace:
-  PACKAGE_NAME=exiv2-0.23
-by:
-  NAME=exiv2
-  VERSION=0.23
+  export NACL_SDK_ROOT=$MYBASE/dev/nacl_sdk/pepper_35
 
